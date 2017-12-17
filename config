@@ -1,0 +1,11 @@
+##########Otus DevOps##########
+
+Host bastion
+        HostName 35.205.147.90
+        User appuser
+
+Host internalhost
+        HostName 10.132.0.3
+        User appuser
+        ProxyCommand ssh bastion -W %h:%p
+
