@@ -8,4 +8,5 @@
    someinternalhost 	     int.ip: 10.132.0.3
 
 HW06
-Basis scripts are added
+Basic scripts are added
+*1 attached create_instance_with_startup.sh
