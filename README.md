@@ -6,3 +6,6 @@
  'ssh internalhost' works
 3. bastion ip: 35.205.147.90 int.ip: 10.132.0.2
    someinternalhost 	     int.ip: 10.132.0.3
+
+HW06
+Basis scripts are added
