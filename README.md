@@ -10,3 +10,4 @@
 HW06
 Basic scripts are added
 *1 attached create_instance_with_startup.sh
+*2 attached create_fw_rule.sh and delete_fw_rule.sh 
