@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ##Обновляем APT
 sudo apt update
 ##устанавливаем Ruby и Bundler
