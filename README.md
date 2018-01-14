@@ -24,3 +24,4 @@ Basic scripts are added
 
 HW07
 Basic files are added
+```packer.io build -var-file=variables.json ubuntu16.json```
