@@ -7,7 +7,7 @@
       "image_family": "reddit-full",
       "source_image_family": "{{user `source_img_fam`}}",
       "zone": "europe-west1-b",
-      "ssh_username": "appuser",
+      "ssh_username": "{{user `ssh_user`}}",
       "machine_type": "{{user `machine_type`}}",
       "image_description": "Baked image with Ruby and MongoDB on board plus deployed app",
       "disk_size": "10",
@@ -26,6 +26,11 @@
       "type": "shell",
       "script": "scripts/install_mongodb.sh",
       "execute_command": "sudo {{.Path}}"
+    },
+    {
+      "type": "file",
+      "source": "files/puma.service",
+      "destination": "/tmp/puma.service"
     },
     {
       "type": "shell",

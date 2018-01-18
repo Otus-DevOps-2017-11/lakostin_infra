@@ -1,10 +1,12 @@
 #!/bin/bash
+set -e
 
-cd /home/appuser/
-git clone https://github.com/Otus-DevOps-2017-11/reddit.git
-##Переходим в директорию проекта и устанавливаем зависимости приложения
-cd reddit && bundle install
+APP_DIR=${1:-$HOME}
 
-##Запускаем сервер приложения в папке проекта
-puma -d
+git clone https://github.com/Otus-DevOps-2017-11/reddit.git $APP_DIR/reddit
+cd $APP_DIR/reddit
+bundle install
 
+sudo mv /tmp/puma.service /etc/systemd/system/puma.service
+sudo systemctl start puma
+sudo systemctl enable puma
