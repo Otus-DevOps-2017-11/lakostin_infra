@@ -34,8 +34,18 @@ Basic files are added
 
 HW08
 ```terraform plan```
+
 ```terraform apply -auto-approve=true```
+
 ```terraform show | grep assigned_nat_ip```
+
 ```terraform refresh```
+
 ```terraform output```
+
 ```terraform output app_external_ip```
+
+recreate resource
+```terraform taint google_compute_instance.app```
+
+```terraform destroy```
