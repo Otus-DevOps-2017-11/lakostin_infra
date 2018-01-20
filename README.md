@@ -49,3 +49,5 @@ recreate resource
 ```terraform taint google_compute_instance.app```
 
 ```terraform destroy```
+
+```terraform fmt```
