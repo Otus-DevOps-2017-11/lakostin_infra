@@ -22,7 +22,15 @@ Basic scripts are added
 
 ```gcloud compute firewall-rules delete default-puma-server```
 
+HW07
+Basic files are added
 
+```packer.io build -var-file=variables.json ubuntu16.json```
+
+2 tasks with stars:
+```packer.io build -var-file=variables.json immutable.json```
+
+```./config-scripts/create-reddit-vm.sh```
 
 HW08
 ```terraform plan```
