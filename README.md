@@ -49,3 +49,6 @@ recreate resource
 ```terraform destroy```
 
 ```terraform fmt```
+
+HW09
+```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
