@@ -8,7 +8,6 @@
    someinternalhost 	     int.ip: 10.132.0.3
 
 HW06
-Basic scripts are added
 
 ```gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure```
 
@@ -23,7 +22,6 @@ Basic scripts are added
 ```gcloud compute firewall-rules delete default-puma-server```
 
 HW07
-Basic files are added
 
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
