@@ -31,6 +31,8 @@ HW07
 ```./config-scripts/create-reddit-vm.sh```
 
 HW08
+```terraform init```
+
 ```terraform plan```
 
 ```terraform apply -auto-approve=true```
@@ -49,3 +51,13 @@ recreate resource
 ```terraform destroy```
 
 ```terraform fmt```
+
+HW09
+```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
+
+Download modules to .terraform directory
+```terraform get```
+
+```tree .terraform```
+
+```terraform graph | dot -Tpng > ~/Загрузки/graph.png```
