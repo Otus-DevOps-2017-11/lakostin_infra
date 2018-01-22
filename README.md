@@ -61,3 +61,38 @@ Download modules to .terraform directory
 ```tree .terraform```
 
 ```terraform graph | dot -Tpng > ~/Загрузки/graph.png```
+
+
+HW10
+```ansible appserver -i ./inventory -m ping```
+
+```ansible dbserver -m command -a uptime```
+
+Ping group of hosts
+```ansible app -m ping```
+
+Ping all hosts
+```ansible all -m ping```
+
+```ansible all -m ping -i inventory.yml```
+
+```ansible all -m ping -i inventory.json```
+
+```ansible app -m command -a 'ruby -v'```
+
+```ansible app -m command -a 'bundler -v'```
+
+```ansible app -m shell -a 'ruby -v; bundler -v'```
+
+```ansible db -m command -a 'systemctl status mongod'```
+
+```ansible db -m shell -a 'systemctl status mongod'```
+
+```ansible db -m systemd -a name=mongod```
+
+older but multipurpose
+```ansible db -m service -a name=mongod```
+
+```ansible app -m git -a 'repo=https://github.com/Otus-DevOps-2017-11/reddit.git dest=/home/appuser/reddit'```
+
+```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
