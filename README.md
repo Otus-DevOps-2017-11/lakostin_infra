@@ -8,7 +8,6 @@
    someinternalhost 	     int.ip: 10.132.0.3
 
 HW06
-Basic scripts are added
 
 ```gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure```
 
@@ -23,9 +22,30 @@ Basic scripts are added
 ```gcloud compute firewall-rules delete default-puma-server```
 
 HW07
-Basic files are added
+
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
 2 tasks with stars:
 ```packer.io build -var-file=variables.json immutable.json```
+
 ```./config-scripts/create-reddit-vm.sh```
+
+HW08
+```terraform plan```
+
+```terraform apply -auto-approve=true```
+
+```terraform show | grep assigned_nat_ip```
+
+```terraform refresh```
+
+```terraform output```
+
+```terraform output app_external_ip```
+
+recreate resource
+```terraform taint google_compute_instance.app```
+
+```terraform destroy```
+
+```terraform fmt```
