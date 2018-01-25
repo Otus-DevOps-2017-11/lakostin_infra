@@ -7,7 +7,7 @@
 3. bastion ip: 35.205.147.90 int.ip: 10.132.0.2
    someinternalhost 	     int.ip: 10.132.0.3
 
-HW06
+##HW06
 
 ```gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure```
 
@@ -21,7 +21,7 @@ HW06
 
 ```gcloud compute firewall-rules delete default-puma-server```
 
-HW07
+##HW07
 
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
@@ -30,7 +30,7 @@ HW07
 
 ```./config-scripts/create-reddit-vm.sh```
 
-HW08
+##HW08
 ```terraform init```
 
 ```terraform plan```
@@ -52,7 +52,7 @@ recreate resource
 
 ```terraform fmt```
 
-HW09
+##HW09
 ```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
 
 Download modules to .terraform directory
@@ -96,3 +96,10 @@ older but multipurpose
 ```ansible app -m git -a 'repo=https://github.com/Otus-DevOps-2017-11/reddit.git dest=/home/appuser/reddit'```
 
 ```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
+
+*
+create credentials in GCP, download them in json file
+set env:
+```source gce.sh```
+
+```ansible all -i ./gce.py -m ping```
