@@ -7,7 +7,7 @@
 3. bastion ip: 35.205.147.90 int.ip: 10.132.0.2
    someinternalhost 	     int.ip: 10.132.0.3
 
-##HW06
+## HW06
 
 ```gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure```
 
@@ -21,7 +21,7 @@
 
 ```gcloud compute firewall-rules delete default-puma-server```
 
-##HW07
+## HW07
 
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
@@ -30,7 +30,7 @@
 
 ```./config-scripts/create-reddit-vm.sh```
 
-##HW08
+## HW08
 ```terraform init```
 
 ```terraform plan```
@@ -52,7 +52,7 @@ recreate resource
 
 ```terraform fmt```
 
-##HW09
+## HW09
 ```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
 
 Download modules to .terraform directory
@@ -63,15 +63,18 @@ Download modules to .terraform directory
 ```terraform graph | dot -Tpng > ~/Загрузки/graph.png```
 
 
-HW10
+## HW10
+
 ```ansible appserver -i ./inventory -m ping```
 
 ```ansible dbserver -m command -a uptime```
 
 Ping group of hosts
+
 ```ansible app -m ping```
 
 Ping all hosts
+
 ```ansible all -m ping```
 
 ```ansible all -m ping -i inventory.yml```
@@ -91,6 +94,7 @@ Ping all hosts
 ```ansible db -m systemd -a name=mongod```
 
 older but multipurpose
+
 ```ansible db -m service -a name=mongod```
 
 ```ansible app -m git -a 'repo=https://github.com/Otus-DevOps-2017-11/reddit.git dest=/home/appuser/reddit'```
@@ -99,7 +103,9 @@ older but multipurpose
 
 *
 create credentials in GCP, download them in json file
+
 set env:
+
 ```source gce.sh```
 
 ```ansible all -i ./gce.py -m ping```
