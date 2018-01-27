@@ -109,3 +109,13 @@ set env:
 ```source gce.sh```
 
 ```ansible all -i ./gce.py -m ping```
+
+## HW11
+
+limit - define group of hosts
+
+```ansible-playbook reddit_app.yml --check --limit db```
+
+```ansible-playbook reddit_app.yml --check --tags app-tag --limit app```
+
+```ansible-playbook reddit_app.yml --check --limit app --tags deploy-tag```
