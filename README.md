@@ -101,14 +101,6 @@ older but multipurpose
 
 ```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
 
-*
-create credentials in GCP, download them in json file
-
-set env:
-
-```source gce.sh```
-
-```ansible all -i ./gce.py -m ping```
 
 ## HW11
 
@@ -125,3 +117,14 @@ limit - define group of hosts
 ```ansible-playbook reddit_app2.yml --tags app-tag --check```
 
 ```ansible-playbook reddit_app2.yml --tags deploy-tag --check```
+
+```ansible-playbook site.yml --check```
+
+*
+create credentials in GCP, download them in json file
+
+set env:
+
+```source gce.sh```
+
+```ansible all -i ./gce.py -m ping```

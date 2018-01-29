@@ -1,5 +1,5 @@
 [app]
-appserver ansible_host=146.148.20.182
+appserver ansible_host=35.189.243.40
 #ansible_user=appuser ansible_private_key_file=~/.ssh/appuser
 [db]
-dbserver ansible_host=35.195.11.225
+dbserver ansible_host=104.155.109.244
