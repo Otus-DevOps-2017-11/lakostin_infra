@@ -119,3 +119,9 @@ limit - define group of hosts
 ```ansible-playbook reddit_app.yml --check --tags app-tag --limit app```
 
 ```ansible-playbook reddit_app.yml --check --limit app --tags deploy-tag```
+
+```ansible-playbook reddit_app2.yml --tags db-tag --check```
+
+```ansible-playbook reddit_app2.yml --tags app-tag --check```
+
+```ansible-playbook reddit_app2.yml --tags deploy-tag --check```
