@@ -128,3 +128,18 @@ set env:
 ```source gce.sh```
 
 ```ansible all -i ./gce.py -m ping```
+
+packing app image with ansible playbook packer_app.yml
+
+```packer.io build -var-file=variables.json app.json```
+
+packing db image with ansible playbook packer_db.yml
+
+```packer.io build -var-file=variables.json db.json```
+
+creating stage app and db instances
+
+```terraform destroy; terraform apply -auto-approve=true```
+
+prepare instances & deploy app
+```ansible-playbook site.yml```
