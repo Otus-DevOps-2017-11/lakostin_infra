@@ -1,6 +1,6 @@
 ---
 - name: Configure MongoDB
-  hosts: db
+  hosts: reddit-db
   become: true
 
   vars:
@@ -13,6 +13,9 @@
         dest: /etc/mongod.conf
         mode: 0644
       notify: restart mongod
+
+    - set_fact:
+        db_host: "{{ gce_private_ip }}"
 
   handlers:
     - name: restart mongod

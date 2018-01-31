@@ -123,11 +123,18 @@ limit - define group of hosts
 *
 create credentials in GCP, download them in json file
 
+[#http://docs.ansible.com/ansible/latest/guide_gce.html]
+
+[#https://raw.githubusercontent.com/ansible/ansible/stable-2.4/contrib/inventory/gce.py]
+
 set env:
 
 ```source gce.sh```
 
 ```ansible all -i ./gce.py -m ping```
+
+using gce.py in playbook (gce_private_ip is passing through set_fact between playbooks):
+ansible-playbook site.yml -i ./gce.py
 
 packing app image with ansible playbook packer_app.yml
 
