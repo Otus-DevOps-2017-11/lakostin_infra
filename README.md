@@ -26,11 +26,13 @@
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
 2 tasks with stars:
+
 ```packer.io build -var-file=variables.json immutable.json```
 
 ```./config-scripts/create-reddit-vm.sh```
 
 ## HW08
+
 ```terraform init```
 
 ```terraform plan```
@@ -46,6 +48,7 @@
 ```terraform output app_external_ip```
 
 recreate resource
+
 ```terraform taint google_compute_instance.app```
 
 ```terraform destroy```
@@ -56,6 +59,7 @@ recreate resource
 ```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
 
 Download modules to .terraform directory
+
 ```terraform get```
 
 ```tree .terraform```
@@ -123,9 +127,9 @@ limit - define group of hosts
 *
 create credentials in GCP, download them in json file
 
-[#http://docs.ansible.com/ansible/latest/guide_gce.html]
+[http://docs.ansible.com/ansible/latest/guide_gce.html]
 
-[#https://raw.githubusercontent.com/ansible/ansible/stable-2.4/contrib/inventory/gce.py]
+[https://raw.githubusercontent.com/ansible/ansible/stable-2.4/contrib/inventory/gce.py]
 
 set env:
 
@@ -134,7 +138,8 @@ set env:
 ```ansible all -i ./gce.py -m ping```
 
 using gce.py in playbook (gce_private_ip is passing through set_fact between playbooks):
-ansible-playbook site.yml -i ./gce.py
+
+```ansible-playbook site.yml -i ./gce.py```
 
 packing app image with ansible playbook packer_app.yml
 
