@@ -159,5 +159,10 @@ prepare instances & deploy app
 
 ## HW12
 ```ansible-galaxy init app```
+
 ```ansible-galaxy init db```
+
+setting ./environments/stage/inventory as default inventory in ansible.cfg
+
+```ansible-playbook -i environments/prod/inventory playbooks/site.yml --check```
 
