@@ -166,3 +166,6 @@ setting ./environments/stage/inventory as default inventory in ansible.cfg
 
 ```ansible-playbook -i environments/prod/inventory playbooks/site.yml --check```
 
+Install community role jdauphant.nginx, add it to .gitignore
+
+```ansible-galaxy install -r environments/stage/requirements.yml```

@@ -41,7 +41,7 @@ resource "google_compute_firewall" "firewall_puma" {
     protocol = "tcp"
 
     ports = [
-      "9292",
+      "9292", "80",
     ]
   }
 
