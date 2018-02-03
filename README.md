@@ -102,10 +102,12 @@ older but multipurpose
 ```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
 
 *
-create credentials in GCP, download them in json file
+gce_import_hosts.py
 
-set env:
+lists GCP instances information and makes data.json file for 2 instances, can be used as inventory
 
-```source gce.sh```
+usage:
 
-```ansible all -i ./gce.py -m ping```
+```ansible all -m ping -i gce_import_hosts.py```
+
+```python gce_import_hosts.py --list```
