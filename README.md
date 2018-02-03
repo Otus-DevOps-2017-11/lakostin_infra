@@ -155,3 +155,9 @@ creating stage app and db instances
 
 prepare instances & deploy app
 ```ansible-playbook site.yml```
+
+
+## HW12
+```ansible-galaxy init app```
+```ansible-galaxy init db```
+
