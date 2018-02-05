@@ -169,3 +169,13 @@ setting ./environments/stage/inventory as default inventory in ansible.cfg
 Install community role jdauphant.nginx, add it to .gitignore
 
 ```ansible-galaxy install -r environments/stage/requirements.yml```
+
+## HW13
+
+Install VirtualBox, install Vagrant
+
+vagrant up
+
+vagrant box list
+
+vagrant status
