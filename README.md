@@ -105,6 +105,15 @@ older but multipurpose
 
 ```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
 
+#gce_import_hosts.py
+
+lists GCP instances information and makes data.json file for 2 instances, can be used as inventory
+
+usage:
+
+```ansible all -m ping -i gce_import_hosts.py```
+
+```python gce_import_hosts.py --list```
 
 ## HW11
 
@@ -124,7 +133,8 @@ limit - define group of hosts
 
 ```ansible-playbook site.yml --check```
 
-*
+#Using gce.py for dynamic inventory
+
 create credentials in GCP, download them in json file
 
 [http://docs.ansible.com/ansible/latest/guide_gce.html]
@@ -133,7 +143,7 @@ create credentials in GCP, download them in json file
 
 set env:
 
-```source gce.sh```
+source gce.sh
 
 ```ansible all -i ./gce.py -m ping```
 
