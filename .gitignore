@@ -5,3 +5,4 @@ variables.json
 *.tfvars
 .terraform/
 *.backup*
+infra-35ec462606e3.json

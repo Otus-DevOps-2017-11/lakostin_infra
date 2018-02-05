@@ -7,7 +7,7 @@
 3. bastion ip: 35.205.147.90 int.ip: 10.132.0.2
    someinternalhost 	     int.ip: 10.132.0.3
 
-HW06
+## HW06
 
 ```gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure```
 
@@ -21,7 +21,7 @@ HW06
 
 ```gcloud compute firewall-rules delete default-puma-server```
 
-HW07
+## HW07
 
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
@@ -30,7 +30,7 @@ HW07
 
 ```./config-scripts/create-reddit-vm.sh```
 
-HW08
+## HW08
 ```terraform init```
 
 ```terraform plan```
@@ -52,7 +52,7 @@ recreate resource
 
 ```terraform fmt```
 
-HW09
+## HW09
 ```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
 
 Download modules to .terraform directory
@@ -61,3 +61,53 @@ Download modules to .terraform directory
 ```tree .terraform```
 
 ```terraform graph | dot -Tpng > ~/Загрузки/graph.png```
+
+
+## HW10
+
+```ansible appserver -i ./inventory -m ping```
+
+```ansible dbserver -m command -a uptime```
+
+Ping group of hosts
+
+```ansible app -m ping```
+
+Ping all hosts
+
+```ansible all -m ping```
+
+```ansible all -m ping -i inventory.yml```
+
+```ansible all -m ping -i inventory.json```
+
+```ansible app -m command -a 'ruby -v'```
+
+```ansible app -m command -a 'bundler -v'```
+
+```ansible app -m shell -a 'ruby -v; bundler -v'```
+
+```ansible db -m command -a 'systemctl status mongod'```
+
+```ansible db -m shell -a 'systemctl status mongod'```
+
+```ansible db -m systemd -a name=mongod```
+
+older but multipurpose
+
+```ansible db -m service -a name=mongod```
+
+```ansible app -m git -a 'repo=https://github.com/Otus-DevOps-2017-11/reddit.git dest=/home/appuser/reddit'```
+
+```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
+
+*
+gce_import_hosts.py
+
+lists GCP instances information and makes data.json file for 2 instances, can be used as inventory
+
+usage:
+
+```ansible all -m ping -i gce_import_hosts.py```
+
+```python gce_import_hosts.py --list```
