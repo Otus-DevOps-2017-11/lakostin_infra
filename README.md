@@ -174,8 +174,24 @@ Install community role jdauphant.nginx, add it to .gitignore
 
 Install VirtualBox, install Vagrant
 
-vagrant up
+```vagrant up```
 
-vagrant box list
+```vagrant box list```
 
-vagrant status
+```vagrant status```
+
+```vagrant ssh appserver```
+
+```vagrant provision dbserver```
+
+Vagrant inventory
+
+```cat .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory```
+
+```vagrant provision appserver```
+
+
+Override vars
+extra_vars - the highest priority
+
+```vagrant destroy -f```
