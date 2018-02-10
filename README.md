@@ -26,11 +26,13 @@
 ```packer.io build -var-file=variables.json ubuntu16.json```
 
 2 tasks with stars:
+
 ```packer.io build -var-file=variables.json immutable.json```
 
 ```./config-scripts/create-reddit-vm.sh```
 
 ## HW08
+
 ```terraform init```
 
 ```terraform plan```
@@ -46,6 +48,7 @@
 ```terraform output app_external_ip```
 
 recreate resource
+
 ```terraform taint google_compute_instance.app```
 
 ```terraform destroy```
@@ -56,6 +59,7 @@ recreate resource
 ```terraform import google_compute_firewall.firewall_ssh default-allow-ssh```
 
 Download modules to .terraform directory
+
 ```terraform get```
 
 ```tree .terraform```
@@ -101,8 +105,7 @@ older but multipurpose
 
 ```ansible app -m command -a 'git clone https://github.com/Otus-DevOps-2017-11/reddit.git /home/appuser/reddit'```
 
-*
-gce_import_hosts.py
+#gce_import_hosts.py
 
 lists GCP instances information and makes data.json file for 2 instances, can be used as inventory
 
@@ -111,3 +114,54 @@ usage:
 ```ansible all -m ping -i gce_import_hosts.py```
 
 ```python gce_import_hosts.py --list```
+
+## HW11
+
+limit - define group of hosts
+
+```ansible-playbook reddit_app.yml --check --limit db```
+
+```ansible-playbook reddit_app.yml --check --tags app-tag --limit app```
+
+```ansible-playbook reddit_app.yml --check --limit app --tags deploy-tag```
+
+```ansible-playbook reddit_app2.yml --tags db-tag --check```
+
+```ansible-playbook reddit_app2.yml --tags app-tag --check```
+
+```ansible-playbook reddit_app2.yml --tags deploy-tag --check```
+
+```ansible-playbook site.yml --check```
+
+#Using gce.py for dynamic inventory
+
+create credentials in GCP, download them in json file
+
+[http://docs.ansible.com/ansible/latest/guide_gce.html]
+
+[https://raw.githubusercontent.com/ansible/ansible/stable-2.4/contrib/inventory/gce.py]
+
+set env:
+
+source gce.sh
+
+```ansible all -i ./gce.py -m ping```
+
+using gce.py in playbook (gce_private_ip is passing through set_fact between playbooks):
+
+```ansible-playbook site.yml -i ./gce.py```
+
+packing app image with ansible playbook packer_app.yml
+
+```packer.io build -var-file=variables.json app.json```
+
+packing db image with ansible playbook packer_db.yml
+
+```packer.io build -var-file=variables.json db.json```
+
+creating stage app and db instances
+
+```terraform destroy; terraform apply -auto-approve=true```
+
+prepare instances & deploy app
+```ansible-playbook site.yml```
