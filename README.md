@@ -195,3 +195,35 @@ Override vars
 extra_vars - the highest priority
 
 ```vagrant destroy -f```
+
+Install Molecule, testinfra, python-vagrant
+
+```sudo pip install -r requirements.txt```
+
+Required also:
+
+```sudo dnf search python2-devel```
+
+```sudo dnf install python2-devel```
+
+Prepare test for ansible/roles/db:
+
+```molecule init scenario --scenario-name default -r db -d vagrant```
+
+Create VM for role testing
+
+Was also required:   ```sudo dnf install libselinux-python```
+
+```molecule create```
+
+```molecule list```
+
+```molecule login -h instance```
+
+After changing db/molecule/default/playbook.yml
+
+```molecule converge```
+
+Run tests
+
+```molecule verify```
