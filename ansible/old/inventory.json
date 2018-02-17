@@ -1,12 +1,12 @@
 {
   "app": {
-    "hosts": "appserver",
+    "hosts": ["appserver"],
     "vars": {
       "ansible_host": "146.148.20.182"
     }
   },
   "db": {
-    "hosts": "dbserver",
+    "hosts": ["dbserver"],
     "vars": {
       "ansible_host": "35.189.246.42"
     }
