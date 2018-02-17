@@ -4,4 +4,4 @@
   become: true
 
   roles:
-    - { role: ../roles/db, tags: [ 'install' ] }
+    - db
