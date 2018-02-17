@@ -143,7 +143,7 @@ create credentials in GCP, download them in json file
 
 set env:
 
-source gce.sh
+```source gce.sh```
 
 ```ansible all -i ./gce.py -m ping```
 
