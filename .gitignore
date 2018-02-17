@@ -8,3 +8,10 @@ variables.json
 infra-35ec462606e3.json
 *.retry
 jdauphant.nginx
+
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache

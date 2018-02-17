@@ -179,3 +179,61 @@ setting ./environments/stage/inventory as default inventory in ansible.cfg
 Install community role jdauphant.nginx, add it to .gitignore
 
 ```ansible-galaxy install -r environments/stage/requirements.yml```
+
+## HW13
+
+Install VirtualBox, install Vagrant
+
+```vagrant up```
+
+```vagrant box list```
+
+```vagrant status```
+
+```vagrant ssh appserver```
+
+```vagrant provision dbserver```
+
+Vagrant inventory
+
+```cat .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory```
+
+```vagrant provision appserver```
+
+
+Override vars
+extra_vars - the highest priority
+
+```vagrant destroy -f```
+
+Install Molecule, testinfra, python-vagrant
+
+```sudo pip install -r requirements.txt```
+
+Required also:
+
+```sudo dnf search python2-devel```
+
+```sudo dnf install python2-devel```
+
+Prepare test for ansible/roles/db:
+
+```molecule init scenario --scenario-name default -r db -d vagrant```
+
+Create VM for role testing
+
+Was also required:   ```sudo dnf install libselinux-python```
+
+```molecule create```
+
+```molecule list```
+
+```molecule login -h instance```
+
+After changing db/molecule/default/playbook.yml
+
+```molecule converge```
+
+Run tests
+
+```molecule verify```

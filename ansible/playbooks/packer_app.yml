@@ -2,13 +2,7 @@
 - name: Configure App
   hosts: all
   become: true
-  tasks:
 
-    - name: Update repositories cache and install Ruby & Bundler
-      apt:
-        name: "{{ item }}"
-        update_cache: yes
-      with_items:
-        - ruby-full
-        - ruby-bundler
-        - build-essential
+  roles:
+    - app
+
